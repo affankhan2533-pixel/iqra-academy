@@ -1,0 +1,173 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: var(--accent);
+  --color-primary-text: var(--accent-text);
+  --color-bg-dark: var(--bg-primary);
+  --color-bg-about: var(--bg-secondary);
+  --color-bg-features: var(--bg-card);
+
+  --color-brand-primary: var(--bg-primary);
+  --color-brand-secondary: var(--bg-secondary);
+  --color-brand-accent: var(--accent);
+  --color-brand-accent-light: var(--accent-light);
+  --color-text-muted: var(--text-muted);
+  --color-brand-border: var(--border-color);
+  --color-brand-button-text: var(--button-text);
+
+  --font-serif: "Instrument Serif", serif;
+  --font-sans: "Almarai", sans-serif;
+
+  /* NOTE: black and white are NOT remapped to theme variables
+     so bg-black always = #000000 and bg-white always = #ffffff */
+}
+
+* {
+  font-family: 'Almarai', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-primary: #FFFFFF; /* Pure white */
+  --bg-secondary: #F8F9FA; /* Off-white / light gray */
+  --bg-card: #FFFFFF;
+  --accent: #1A1A1A;
+  --accent-light: #3A3A3A;
+  --accent-text: #1A1A1A;
+  --text-muted: rgba(26, 26, 26, 0.6);
+  --button-text: #FAF9F6;
+  --border-color: rgba(0, 0, 0, 0.08);
+  --bg-card-glass: rgba(255, 255, 255, 0.75);
+
+  color-scheme: light;
+}
+
+:root.dark,
+html.dark,
+.dark {
+  --bg-primary: #000000;
+  --bg-secondary: #101010;
+  --bg-card: #212121;
+  --accent: #DEDBC8;
+  --accent-light: #E1E0CC;
+  --accent-text: #E1E0CC;
+  --text-muted: rgba(225, 224, 204, 0.7);
+  --button-text: #000000;
+  --border-color: rgba(255, 255, 255, 0.05);
+  --bg-card-glass: rgba(16, 16, 16, 0.7);
+
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--accent-light);
+  margin: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom CSS Utilities (Turbulence noise SVG filters) */
+.noise-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+.bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Custom Scrollbar styled cinematic */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-card);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Glassmorphism utility */
+.glass {
+  background-color: var(--bg-card-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+}
+
+/* Global Light Mode Form Field Overrides */
+html.light option {
+  background-color: var(--bg-primary) !important;
+  color: var(--accent-text) !important;
+}
+
+/* Global Light Mode Overrides for Dashboard Pages */
+html.light main .text-white:not(.dark *),
+html.light aside .text-white:not(.dark *) {
+  color: var(--accent-text) !important;
+}
+
+html.light main .text-white\/90:not(.dark *),
+html.light aside .text-white\/90:not(.dark *) {
+  color: rgba(26, 26, 26, 0.9) !important;
+}
+
+html.light main .text-white\/75:not(.dark *),
+html.light aside .text-white\/75:not(.dark *) {
+  color: rgba(26, 26, 26, 0.75) !important;
+}
+
+html.light main .text-white\/50:not(.dark *),
+html.light aside .text-white\/50:not(.dark *) {
+  color: rgba(26, 26, 26, 0.5) !important;
+}
+
+html.light main .text-text-muted:not(.dark *),
+html.light aside .text-text-muted:not(.dark *) {
+  color: var(--text-muted) !important;
+}
+
+html.light main .border-white\/5:not(.dark *),
+html.light aside .border-white\/5:not(.dark *),
+html.light main .border-white\/10:not(.dark *),
+html.light aside .border-white\/10:not(.dark *),
+html.light main .border-white\/20:not(.dark *),
+html.light aside .border-white\/20:not(.dark *) {
+  border-color: var(--border-color) !important;
+}
+
+html.light main .bg-white\/5:not(.dark *),
+html.light aside .bg-white\/5:not(.dark *),
+html.light main .bg-white\/10:not(.dark *),
+html.light aside .bg-white\/10:not(.dark *),
+html.light main .bg-brand-secondary\/40:not(.dark *),
+html.light main .bg-brand-secondary\/30:not(.dark *),
+html.light main .bg-brand-secondary\/15:not(.dark *),
+html.light main .bg-brand-secondary:not(.dark *),
+html.light main .bg-black\/50:not(.dark *) {
+  background-color: var(--bg-secondary) !important;
+}
+
+
+/* Custom animation classes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.4s ease-out forwards;
+}
