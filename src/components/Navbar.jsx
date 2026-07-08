@@ -170,7 +170,7 @@ const Navbar = () => {
 
       {/* Mobile Drawer */}
       {isOpen && (
-        <div className="absolute top-16 left-4 right-4 bg-bg-card border border-brand-border rounded-[2rem] p-5 flex flex-col gap-2 shadow-2xl animate-fadeIn z-50">
+        <div className="absolute top-16 left-4 right-4 glass rounded-[2rem] p-5 flex flex-col gap-2 shadow-2xl animate-fadeIn z-50 max-h-[calc(100vh-6rem)] overflow-y-auto">
           {[
             { label: 'Home', path: '/' },
             { label: 'Story & Pillars', path: '/about' },

@@ -46,7 +46,7 @@ const WordsPullUpMultiStyle = ({ segments, className }) => {
       variants={containerVariants}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
-      className={`inline-flex flex-wrap justify-center ${className}`}
+      className={`flex flex-wrap justify-center ${className}`}
     >
       {allWords.map((word, index) => (
         <span

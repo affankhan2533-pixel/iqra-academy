@@ -34,7 +34,7 @@ const WordsPullUp = ({ text, className, showAsterisk = false }) => {
       variants={containerVariants}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
-      className={`inline-flex flex-wrap ${className}`}
+      className={`flex flex-wrap ${className}`}
     >
       {words.map((word, index) => {
         const isLastWord = index === words.length - 1;

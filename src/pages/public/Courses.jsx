@@ -111,8 +111,8 @@ const Courses = () => {
                 </h3>
                 <ul className="flex flex-col gap-2">
                   {course.subjects.map((sub) => (
-                    <li key={sub} className="text-sm text-primary-text flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                    <li key={sub} className="text-sm text-primary-text flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-[7px]" />
                       {sub}
                     </li>
                   ))}
