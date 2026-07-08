@@ -29,7 +29,7 @@ const Navbar = () => {
   return (
     <nav className="fixed top-4 left-1/2 -translate-x-1/2 w-full max-w-6xl z-50 px-4 flex justify-center">
       {/* Floating Pill Bar */}
-      <div className="glass rounded-full px-6 py-2.5 flex items-center justify-between w-full shadow-2xl relative">
+      <div className="bg-brand-primary border border-brand-border lg:bg-transparent lg:border-none lg:glass rounded-full px-6 py-2.5 flex items-center justify-between w-full shadow-2xl relative">
         
         {/* Brand Logo */}
         <GSAPMagnetic strength={0.15}>
@@ -170,7 +170,7 @@ const Navbar = () => {
 
       {/* Mobile Drawer */}
       {isOpen && (
-        <div className="absolute top-16 left-4 right-4 glass rounded-[2rem] p-5 flex flex-col gap-2 shadow-2xl animate-fadeIn z-50 max-h-[calc(100vh-6rem)] overflow-y-auto">
+        <div className="absolute top-16 left-4 right-4 bg-brand-primary border border-brand-border rounded-[2rem] p-5 flex flex-col gap-2 shadow-2xl animate-fadeIn z-50 max-h-[calc(100vh-6rem)] overflow-y-auto">
           {[
             { label: 'Home', path: '/' },
             { label: 'Story & Pillars', path: '/about' },
